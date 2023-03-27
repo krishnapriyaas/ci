@@ -26,6 +26,6 @@ class Welcome extends CI_Controller {
 	public function test()
 	{
 	
-		echo "This is the welcome controller";
+		echo "This is the test method for view controllers";
 	}
 }
