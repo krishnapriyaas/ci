@@ -7,11 +7,11 @@
 <body>
 <?php
 
-foreach ($results as $object)
-{
-echo $object->username ."</br>";
-}
-
+// foreach ($results as $object)
+// {
+// echo $object->username ."</br>";
+// }
+echo $results;
 
 ?>
 
