@@ -10,7 +10,7 @@ public function get_users()
 
         // $connection=$this->load->database($config) 
         
-         $query= $this->db>get('users');
+         $query= $this->db->get('users');
          return $query->result();
 }
 
