@@ -1,8 +1,17 @@
 <?php
 class user_model extends CI_Model
 {
-public function get_users()
+public function get_users($user_id,$user_name)
 {
+        $this->db->where(['id'=> $user_id,
+        'username' =>$user_name
+
+        ]);
+
+        $query= $this->db->get('users');
+        return $query->result();
+
+
         // $config['localhost']="localhost";
         // $config['username']="root";
         // $config['password']="";
