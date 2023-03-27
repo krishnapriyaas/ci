@@ -22,7 +22,18 @@ class Users extends CI_Controller {
 
         
 	}
+    public function insert()
+    {
+        $username='peter';
+        $password="1234";
+        $this->user_model->create_users([
+        'username'=> $username,
+        'password'=>$password
 
+
+        ]);
+
+    }
 
 
 }
