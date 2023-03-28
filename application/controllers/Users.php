@@ -34,7 +34,26 @@ class Users extends CI_Controller {
         ]);
 
     }
+    public function update()
+    {
+        $id=1;
+        $username='meera';
+        $password="12546844";
+        $this->user_model->update_users([
+        'username'=> $username,
+        'password'=>$password
 
+
+        ],$id);
+
+    }
+    public function delete()
+    {
+        $id=1;
+       
+        $this->user_model->delete_users($id);
+
+    }
 
 }
 ?>
