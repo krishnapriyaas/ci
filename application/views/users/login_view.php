@@ -1,3 +1,6 @@
+<?php  if($this->session->userdata('logged in')): ?>
+<?php echo "logout"; ?>
+<?php else: ?>
 <h1>Login Form</h1>
 <?php $attribute = array('id' => 'login_form' , 'class' => 'form_horizontal'); ?>
 <?php  if($this->session->flashdata('errors')): ?>
@@ -65,3 +68,6 @@
 </div>
 
 <?php echo form_close();?>
+
+
+<?php endif; ?> 
