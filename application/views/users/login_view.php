@@ -1,7 +1,7 @@
 <h1>Login Form</h1>
 <?php $attribute = array('id' => 'login_form' , 'class' => 'form_horizontal'); ?>
 <?php  if($this->session->flashdata('errors')): ?>
-<?php echo $this->session->flashdata('errors'); ?>
+<?php print_r($this->session->flashdata('errors')); ?>
 <?php endif; ?>    
 <?php echo form_open('users/login',$attribute);?>
 
@@ -36,7 +36,21 @@
 ?>
 <?php echo form_password($data);?>
 </div>
+<div class="form-group">
 
+<?php echo form_label('Confirm Password');?>
+
+
+<?php 
+
+    $data = array(
+    'class' => 'form-control',
+    'name' => 'confirm_password',
+    'placeholder' => 'Confirm password'
+    );
+?>
+<?php echo form_password($data);?>
+</div>
 <div class="form-group">
 
 <?php 
