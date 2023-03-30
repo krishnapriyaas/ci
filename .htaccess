@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+    SetEnv CI_ENV development
+    SetEnv BASE_URL http://localhost/ci
+    SetEnv DB_NAME  beta3
+    SetEnv DB_HOSTNAME localhost
+    SetEnv DB_USERNAME root
+    SetEnv DB_PASSWORD
+
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?/$1 [L]
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+    ErrorDocument 404 /index.php
+</IfModule>
+
