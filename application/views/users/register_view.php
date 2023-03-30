@@ -1,44 +1,49 @@
-<?php if($this->session->userdata('logged_in')): ?>
-<h2>Logout</h2>
-    <?php echo form_open('users/logout'); ?>
-    <p>
-    <?php if($this->session->userdata['username']):?>
-        <?php echo "You are logged as   " . $this->session->userdata('username'); ?>
-        <?php endif; ?>
-    </p>
-
-    <?php 
-    
-       $data = array(
-
-       'class' => 'btn btn-primary',
-       'name'  => 'submit',
-       'value' => 'Logout'
-
-       );
-    
-    ?>
-    <?php echo form_submit($data); ?>
-    <?php echo form_close(); ?>
-
-    <?php else: ?>
-
-
-
-<h1>Login Form</h1>
-<?php $attribute = array('id' => 'login_form' , 'class' => 'form_horizontal'); ?>
-
+<h1>Register</h1>
+<?php $attribute = array('id' => 'register_form' , 'class' => 'form_horizontal'); ?>
 <?php  if($this->session->flashdata('errors')): ?>
 <?php echo $this->session->flashdata('errors'); ?>
+<?php endif; ?>
+<?php echo form_open('users/register',$attribute);?>
+<div class="form-group">
 
-<?php endif; ?>    
-<?php echo form_open('users/login',$attribute);?>
+<?php echo form_label('First Name');?>
+<?php 
 
+    $data = array(
+    'class' => 'form-control',
+    'name' => 'first_name',
+    'placeholder' => 'Enter FirstName'
+    );
+?>
+<?php echo form_input($data);?>
+</div>
+<div class="form-group">
+
+<?php echo form_label('Last_Name');?>
+<?php 
+
+    $data = array(
+    'class' => 'form-control',
+    'name' => 'last_name',
+    'placeholder' => 'Enter lastname'
+    );
+?>
+<?php echo form_input($data);?>
+</div>
+<?php echo form_label('Email');?>
+<?php 
+
+    $data = array(
+    'class' => 'form-control',
+    'name' => 'email',
+    'placeholder' => 'Enter Your Email'
+    );
+?>
+<?php echo form_input($data);?>
+</div>
 <div class="form-group">
 
 <?php echo form_label('Username');?>
-
-
 <?php 
 
     $data = array(
@@ -98,4 +103,3 @@
 </div>
 
 <?php echo form_close();?>
-<?php endif; ?>
