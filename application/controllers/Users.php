@@ -11,12 +11,14 @@ public function login(){
      if ($this->form_validation->run() == FALSE) {
      $data = array(
 
-      'errors' => validation_errors()
+      'errors' => validation_errors(),
+      'main_view'=>'home_view'
 
   );
  //print_r($data);
   $this->session->set_flashdata($data);
-  redirect('home');
+  //redirect('home');
+  $this->load->view('layouts/main',$data);
 }
 else {
   $username = $this->input->post('username'); 
@@ -34,13 +36,81 @@ else {
 
       $this->session->set_userdata($user_data);
       $this->session->set_flashdata('login_success','you are now loged in');
-      redirect('home/index');
+
+      $data['main_view'] = "admin_view";
+		  $this->load->view('layouts/main',$data);
+     // redirect('home/index');
      }
      else{
       $this->session->set_flashdata('login_failed','sorry you are not loged in');
       redirect('home/index');
      }
 }
+  //echo $this->input->post('username');
+  //echo " this works";
+  //echo $_POST['username'];
 }
+
+
+
+
+
+
+
+
+/*public function show($user_id){
+
+
+   // $this->load->model('user_model');
+    $data['result'] = $this->user_model->get_users($user_id,'anu');
+    $this->load->view('user_view',$data);
+   // $data['welcome'] = " Welcome to my page";
+
+   
+   // foreach ($result as $object){
+     //   echo $object->username . "<br>";
+   // }
+
+}
+
+public function insert()
+{
+    $username = "kinku";
+    $password = "kinku123";
+    $this->user_model->create_users([
+
+    'username' => $username,
+    'password' => $password
+
+
+  ]);
+}
+
+public function update()
+{   
+    $id = 3;
+    $username = "shraavan";
+    $password = "123s";
+    $this->user_model->update_users([
+
+    'username' => $username,
+    'password' => $password
+
+
+  ],$id);
+}
+public function delete()
+{
+  $id =3;
+  $this->user_model->delete_users($id);
+  
+}*/
+public function logout(){
+
+  $this->session->sess_destroy();
+  redirect('home/index');
+
+}
+
 }
 ?>
