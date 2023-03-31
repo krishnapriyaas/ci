@@ -15,7 +15,16 @@ class Users extends CI_Controller{
       $this->load->view('layouts/main',$data);
      
     }else{
-      redirect('');
+     if ($this->user_model->create_user()){
+
+       redirect('home/index');
+
+
+     }else{
+
+
+      
+     }
     
     }
   }

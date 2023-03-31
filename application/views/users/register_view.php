@@ -1,10 +1,7 @@
 <h2>Register Form</h2>
 <?php $attribute = array('id' => 'register_form' , 'class' => 'form_horizontal'); ?>
 
-<?php  if($this->session->flashdata('errors')): ?>
-<?php echo $this->session->flashdata('errors'); ?>
-
-<?php endif; ?>    
+<?php echo validation_errors("<p class='bg-danger'>");?>   
 <?php echo form_open('users/register',$attribute);?>
 <div class="form-group">
 
