@@ -1,49 +1,66 @@
-<h1>Register</h1>
+<h2>Register Form</h2>
 <?php $attribute = array('id' => 'register_form' , 'class' => 'form_horizontal'); ?>
+
 <?php  if($this->session->flashdata('errors')): ?>
 <?php echo $this->session->flashdata('errors'); ?>
-<?php endif; ?>
+
+<?php endif; ?>    
 <?php echo form_open('users/register',$attribute);?>
 <div class="form-group">
 
-<?php echo form_label('First Name');?>
+<?php echo form_label('First name');?>
+
+
 <?php 
 
     $data = array(
     'class' => 'form-control',
     'name' => 'first_name',
-    'placeholder' => 'Enter FirstName'
+    'placeholder' => 'Enter first name'
     );
 ?>
 <?php echo form_input($data);?>
 </div>
+
 <div class="form-group">
 
-<?php echo form_label('Last_Name');?>
+<?php echo form_label('Last name');?>
+
+
 <?php 
 
     $data = array(
     'class' => 'form-control',
     'name' => 'last_name',
-    'placeholder' => 'Enter lastname'
+    'placeholder' => 'Enter Last name'
     );
 ?>
 <?php echo form_input($data);?>
 </div>
+
+<div class="form-group">
+
 <?php echo form_label('Email');?>
+
+
 <?php 
 
     $data = array(
     'class' => 'form-control',
     'name' => 'email',
-    'placeholder' => 'Enter Your Email'
+    'placeholder' => 'Enter your email'
     );
 ?>
 <?php echo form_input($data);?>
 </div>
+
+
+
 <div class="form-group">
 
 <?php echo form_label('Username');?>
+
+
 <?php 
 
     $data = array(
@@ -96,7 +113,7 @@
     $data = array(
     'class' => 'btn btn-primary',
     'name' => 'submit',
-    'value' => 'Login'
+    'value' => 'Register'
     );
 ?>
 <?php echo form_submit($data);?>
