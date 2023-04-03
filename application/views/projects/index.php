@@ -12,7 +12,7 @@
     <tbody>
         <?php foreach($projects as $project): ?>
             <tr>
-            <?php echo "<td>". $project->project_name ."</td>"; ?> 
+            <?php echo "<td><a  href='".base_url()."projects/display'>". $project->project_name ."</a></td>"; ?> 
             <?php echo "<td>". $project->project_body ."</td>"; ?>   
            </tr>
         <?php endforeach; ?>

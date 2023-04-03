@@ -21,8 +21,15 @@ class Projects extends CI_Controller{
         $data['main_view'] = "projects/index";
         $this->load->view('layouts/main', $data);
 
-       // echo" my first programe ";
-       //$this->load->view('home_view');
+     ;
+    }
+    public function display()
+    {
+        
+        $data['main_view'] = "projects/display";
+        $this->load->view('layouts/main', $data);
+
+     
     }
 }
 
