@@ -11,10 +11,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 </head>
 <body>
-<h3>Project Name</h3>
+<h3>
+<h1>Project Name:<?php echo $project_data->project_name; ?></h1>
+ <p>Date Created:<?php echo $project_data->date_created; ?>
+ <p>Description:<?php echo $project_data->project_body; ?>
+ 
+ 
+ 
+</h3>
 
 <ul class="list-group">
-  <li class="list-group-item active">Project Actions</li>
+  <li class="list-group-item active">Project Action</li>
   <li class="list-group-item"><a href="">Create Project</a></li>
   <li class="list-group-item"><a href="">Edit Project</a></li>
   <li class="list-group-item"><a href="">Delete Project</a></li>
