@@ -25,6 +25,9 @@
       <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url();?>Users/register">Register</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url();?>projects/create">projects</a>
+      </li>
      </ul>
      <?php if($this->session->userdata('logged_in')):?>
       <ul class="nav navbar-nav navbar-right">

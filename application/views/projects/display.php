@@ -22,9 +22,9 @@
 
 <ul class="list-group">
   <li class="list-group-item active">Project Action</li>
-  <li class="list-group-item"><a href="">Create Project</a></li>
-  <li class="list-group-item"><a href="">Edit Project</a></li>
-  <li class="list-group-item"><a href="">Delete Project</a></li>
+  <li class="list-group-item"><a href="<?php echo base_url();?>projects/create">Create Project</a></li>
+  <li class="list-group-item"><a href="<?php echo base_url();?>projects/edit">Edit Project</a></li>
+  <li class="list-group-item"><a href="<?php echo base_url();?>projects/delete">Delete Project</a></li>
  
 </ul>
 </body>

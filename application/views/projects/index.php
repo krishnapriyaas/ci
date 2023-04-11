@@ -24,8 +24,7 @@
 <table class='table table-hover'>
 
     <thead>
-    <a class="btn btn-primary btn-lg float-right" href="<?php echo base_url();?>projects/create
-    ">Create Projects</a>
+    <a class="btn btn-primary btn-lg float-right" href="<?php echo base_url();?>projects/create">Create Projects</a>
         <tr>
             <th> Project Name</th>
             <th> Project Body</th>
