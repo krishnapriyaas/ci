@@ -11,14 +11,40 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 </head>
 <body>
-<h3>
-<h1>Project Name:<?php echo $project_data->project_name; ?></h1>
- <p>Date Created:<?php echo $project_data->date_created; ?>
- <p>Description:<?php echo $project_data->project_body; ?>
- 
- 
- 
-</h3>
+<div class="col-xs-9">
+
+<p class="bg-success">
+	
+
+<?php if($this->session->flashdata('mark_done')): ?>
+
+<?php echo $this->session->flashdata('mark_done'); ?>
+
+<?php endif; ?>
+
+
+<?php if($this->session->flashdata('mark_undone')): ?>
+
+<?php echo $this->session->flashdata('mark_undone'); ?>
+
+<?php endif; ?>
+
+</p>
+
+
+
+<div class="panel panel-primary">
+	<div class="panel-heading"><h4>Project Name: <?php echo $project_data->project_name; ?></h4></div>
+
+	<div class="panel-body">
+<p><strong>Date Created:</strong> <?php  echo $project_data->date_created; ?></p>
+
+<h4>Description</h4>
+
+<p><?php  echo $project_data->project_body; ?></p>
+
+</div>
+</div>
 
 <ul class="list-group">
   <li class="list-group-item active">Project Action</li>

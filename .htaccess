@@ -1,5 +1,5 @@
 <IfModule mod_rewrite.c>
-    SetEnv CI_ENV development
+    SetEnv CI_ENV production
     SetEnv BASE_URL http://localhost/ci
     SetEnv DB_NAME  beta3
     SetEnv DB_HOSTNAME localhost

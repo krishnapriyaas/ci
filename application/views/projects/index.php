@@ -15,37 +15,72 @@
 
 
 <body>
-<p class="bg-danger">
-<?php if($this->session->flashdata('no_access')):?>
-<?php echo $this->session->flashdata('no_access');?> 
+<p class="bg-success">
+	
+
+<?php if($this->session->flashdata('project_created')): ?>
+
+<?php echo $this->session->flashdata('project_created'); ?>
+
 <?php endif; ?>
-</p> 
-<h1>PROJECTS</h1>
-<table class='table table-hover'>
 
-    <thead>
-    <a class="btn btn-primary btn-lg float-right" href="<?php echo base_url();?>projects/create">Create Projects</a>
-        <tr>
-            <th> Project Name</th>
-            <th> Project Body</th>
-        </tr>
+<?php if($this->session->flashdata('project_updated')): ?>
 
+<?php echo $this->session->flashdata('project_updated'); ?>
 
-    </thead>
-    <tbody>
-        <?php foreach($projects as $project): ?>
-            <tr>
-            <?php echo "<td><a  href='".base_url()."projects/display/".$project->id."'>". $project->project_name ."</a></td>"; ?> 
-            <?php echo "<td>". $project->project_body ."</td>"; ?>   
-           </tr>
-        <?php endforeach; ?>
-
-    </tbody>
+<?php endif; ?>
 
 
 
+<?php if($this->session->flashdata('project_deleted')): ?>
+
+<?php echo $this->session->flashdata('project_deleted'); ?>
+
+<?php endif; ?>
+
+
+<div class="panel panel-success">
+
+
+	<div class="panel-heading"><h3>Projects</h3></div>
+
+	<div class="panel-body">
+
+	<ul class="list-group">
+	
+		<?php foreach($projects as $project): ?>
+
+		<li class='list-group-item'>
+
+		<div class=''>
+
+
+		<?php echo "<a  href='". base_url() ."projects/display/". $project->id ."'>" . $project->project_name . "</a>"; ?>
+
+		</div>
+
+		<!-- <div class="">
+
+			<a class="btn btn-danger " href="<?php echo base_url();?>projects/delete/<?php echo $project->id; ?>"><span class="glyphicon glyphicon-remove"></span></a>
+			
+
+		</div> -->
+
+		</li>
 
 
 
-</table>
-        </body>
+
+	   <?php endforeach; ?>
+
+	
+	
+	</ul>
+
+<a class="btn btn-primary pull-right" href="<?php echo base_url();?>projects/create">Create Project</a>
+
+</div>
+
+</div> <!-- ENd of panel-->
+
+
